@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Portfolio | UI/UX Designer — Mahmood Fazile</title>
+  <meta name="description"
+    content="Mahmood Fazile — UI/UX Designer. Clean, modern and user-friendly interface design. Portfolio, projects and contact." />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0f0f0f;
+      --muted: #aaa;
+      --accent: #ff7a00;
+      --card: #161616;
+      --panel: #1a1a1a;
+      --radius: 10px;
+      --gap: 24px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif
+    }
+
+    html,
+    body {
+      height: 100%
+    }
+
+    body {
+      background: var(--bg);
+      color: #fff;
+      line-height: 1.45
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 6%;
+      gap: 10px;
+      position: sticky;
+      top: 0;
+      background: linear-gradient(180deg, rgba(15, 15, 15, .9), rgba(15, 15, 15, .65));
+      backdrop-filter: blur(4px);
+      z-index: 20
+    }
+
+    .logo {
+      color: var(--accent);
+      font-weight: 700;
+      font-size: 20px
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 10px
+    }
+
+    nav a {
+      color: var(--muted);
+      margin: 0 12px;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 15px
+    }
+
+    nav a:hover {
+      color: var(--accent)
+    }
+
+    .btn {
+      background: var(--accent);
+      color: #fff;
+      padding: 8px 18px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      display: inline-block
+    }
+
+    .hero {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 64px 6%;
+      gap: 30px;
+      min-height: 72vh
+    }
+
+    .hero-text {
+      max-width: 55%
+    }
+
+    .hero-text h4 {
+      color: var(--muted);
+      margin-bottom: 8px;
+      font-weight: 500
+    }
+
+    .hero-text h1 {
+      font-size: 44px;
+      color: #fff;
+      margin: 6px 0 12px
+    }
+
+    .hero-text h2 {
+      font-size: 28px;
+      color: var(--accent);
+      margin-bottom: 14px;
+      font-weight: 700
+    }
+
+    .hero-text p {
+      color: #ccc;
+      margin-bottom: 22px;
+      font-size: 16px
+    }
+
+    .actions a {
+      margin-right: 12px
+    }
+
+    .outline {
+      border: 1px solid #555;
+      color: #fff;
+      background: none;
+      padding: 8px 16px;
+      border-radius: 8px
+    }
+
+    .stats {
+      display: flex;
+      gap: 18px;
+      margin-top: 26px;
+      flex-wrap: wrap
+    }
+
+    .stat {
+      background: var(--card);
+      padding: 16px 20px;
+      border-radius: 10px;
+      text-align: center;
+      min-width: 110px
+    }
+
+    .stat h2 {
+      color: var(--accent);
+      font-size: 20px;
+      margin-bottom: 6px
+    }
+
+    .hero-img {
+      position: relative
+    }
+
+    .hero-img img {
+      width: 320px;
+      border-radius: 50%;
+      filter: grayscale(20%);
+      display: block
+    }
+
+    section.projects {
+      padding: 48px 6%;
+      gap: 18px
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 18px;
+      margin-top: 18px
+    }
+
+    .project {
+      background: var(--panel);
+      padding: 16px;
+      border-radius: 12px
+    }
+
+    .project h3 {
+      margin-bottom: 8px;
+      color: #fff;
+      font-size: 18px
+    }
+
+    .project p {
+      color: var(--muted);
+      font-size: 14px
+    }
+
+    .contact {
+      padding: 44px 6%;
+      display: flex;
+      gap: 30px;
+      flex-wrap: wrap;
+      align-items: flex-start
+    }
+
+    .contact form {
+      flex: 1;
+      min-width: 280px;
+      background: var(--panel);
+      Padding: 18px;
+      border-radius: 12px
+    }
+
+    .contact aside {
+      width: 320px;
+      min-width: 250px;
+      background: var(--panel);
+      padding: 18px;
+      border-radius: 12px
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      padding: 10px;
+      border-radius: 8px;
+      border: 1px solid #2a2a2a;
+      background: #0b0b0b;
+      color: #fff;
+      margin-bottom: 12px
+    }
+
+    textarea {
+      min-height: 110px;
+      resize: vertical
+    }
+
+    footer {
+      text-align: center;
+      padding: 26px;
+      color: #666;
+      background: transparent
+    }
+
+    .mobile-toggle {
+      display: none;
+      background: none;
+      border: 0;
+      color: var(--muted);
+      font-size: 22px
+    }
+
+    @media(max-width:900px) {
+      header {
+        padding: 14px 5%
+      }
+
+      nav {
+        position: fixed;
+        left: 0;
+        right: 0;
+        top: 60px;
+        background: var(--bg);
+        flex-direction: column;
+        gap: 0;
+        padding: 12px 6%;
+        display: none
+      }
+
+      nav.show {
+        display: flex
+      }
+
+      .mobile-toggle {
+        display: block
+      }
+
+      .hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 36px 6%
+      }
+
+      .hero-text {
+        max-width: 100%
+      }
+
+      .hero-img img {
+        width: 220px;
+        margin-top: 18px
+      }
+
+      .contact {
+        flex-direction: column
+      }
+
+      .contact aside {
+        width: 100%
+      }
+    }
+
+    /* small utilities */
+    a.btn:focus,
+    button:focus,
+    input:focus,
+    textarea:focus {
+      outline: 2px solid rgba(255, 122, 0, .25)
+    }
+
+    /* Animations */
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(12px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes floaty {
+      0% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-6px);
+      }
+
+      100% {
+        transform: translateY(0);
+      }
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(12px);
+      transition: opacity .55s ease, transform .55s ease;
+      will-change: opacity, transform
+    }
+
+    .reveal.active {
+      opacity: 1;
+      transform: none
+    }
+
+    .hero-img img {
+      transition: transform .25s ease, filter .35s ease;
+    }
+
+    .hero-img.float img {
+      animation: floaty 6s ease-in-out infinite;
+    }
+
+    .project {
+      transition: transform .28s cubic-bezier(.2, .9, .2, 1), box-shadow .24s ease
+    }
+
+    .project:hover {
+      transform: translateY(-8px) rotateZ(-.25deg);
+      box-shadow: 0 18px 40px rgba(0, 0, 0, .55)
+    }
+
+    .btn {
+      transition: transform .18s ease, box-shadow .18s ease
+    }
+
+    .btn:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 30px rgba(255, 122, 0, .12)
+    }
+
+    nav a {
+      transition: color .18s ease, transform .18s ease
+    }
+
+    nav a:active {
+      transform: translateY(1px)
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="logo" aria-hidden="true">MF</div>
+    <button class="mobile-toggle" aria-expanded="false" aria-controls="site-nav" id="navToggle">☰</button>
+    <nav id="site-nav" aria-label="Primary">
+      <a href="#home">Home</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#certifications">Certifications</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="btn" href="resume.pdf" download rel="noopener">Download CV</a>
+  </header>
+
+  <main>
+    <section id="home" class="hero" aria-labelledby="intro-heading">
+      <div class="hero-text reveal" data-delay="0.05">
+        <h4>Hi, I am</h4>
+        <h1 id="intro-heading">Mahmood Fazile</h1>
+        <h2>UI/UX Designer</h2>
+        <p>I design clean, modern and user‑friendly interfaces that turn ideas into real products. I focus on clarity,
+          accessibility and delightful interactions.</p>
+        <div class="actions" role="group" aria-label="Primary actions">
+          <a class="btn" href="#contact">Hire Me</a>
+          <a class="outline" href="resume.pdf" download rel="noopener">Download CV</a>
+        </div>
+        <div class="stats" aria-hidden="false">
+          <div class="stat reveal" data-delay="0.15">
+            <h2>5+</h2>
+            <p>Years Experience</p>
+          </div>
+          <div class="stat reveal" data-delay="0.2">
+            <h2>20+</h2>
+            <p>Projects</p>
+          </div>
+          <div class="stat reveal" data-delay="0.25">
+            <h2>80+</h2>
+            <p>Happy Clients</p>
+          </div>
+        </div>
+      </div>
+      <div class="hero-img reveal float" aria-hidden="false" data-delay="0.12">
+        <img src="https://images.unsplash.com/photo-1603415526960-f7e0328c63b1?q=80&w=600&auto=format&fit=crop"
+          alt="Portrait of Mahmood Fazile" />
+      </div>
+    </section>
+
+    <!-- About section -->
+    <section id="about" class="about" aria-labelledby="about-heading"
+      style="padding:28px 6%;background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent)">
+      <h2 id="about-heading" style="color:var(--accent);font-size:20px">About Me</h2>
+      <div class="reveal" data-delay="0.08" style="margin-top:12px;color:var(--muted);max-width:900px">
+        <p>I’m a UI/UX designer focused on crafting accessible, clear and impactful digital products. I collaborate with
+          product teams to translate requirements into intuitive experiences — from user research and wireframes to
+          high-fidelity prototypes.</p>
+      </div>
+    </section>
+
+    <section id="projects" class="projects" aria-labelledby="projects-heading">
+      <h2 id="projects-heading" style="color:var(--accent);font-size:20px">Selected Projects</h2>
+      <div class="projects-grid">
+        <article class="project reveal" data-delay="0.10">
+          <h3>Product App Redesign</h3>
+          <p>End-to-end UI/UX redesign improving onboarding and conversion.</p>
+        </article>
+        <article class="project reveal" data-delay="0.14">
+          <h3>Dashboard for Analytics</h3>
+          <p>Clean, data-forward dashboard with customizable widgets.</p>
+        </article>
+        <article class="project reveal" data-delay="0.18">
+          <h3>E‑commerce UX Audit</h3>
+          <p>Recommendations and prototype to boost checkout completion.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Skills section -->
+    <section id="skills" class="projects" aria-labelledby="skills-heading" style="padding:32px 6%;">
+      <h2 id="skills-heading" style="color:var(--accent);font-size:20px">Skills</h2>
+      <div class="projects-grid" style="margin-top:14px;display:flex;flex-wrap:wrap;gap:12px">
+        <div class="project reveal" data-delay="0.06" style="min-width:160px;flex:1 1 180px">
+          <h3>UX Research</h3>
+          <p style="color:var(--muted);font-size:13px">User interviews, surveys, persona development</p>
+        </div>
+        <div class="project reveal" data-delay="0.08" style="min-width:160px;flex:1 1 180px">
+          <h3>Interaction Design</h3>
+          <p style="color:var(--muted);font-size:13px">Wireframes, motion, micro-interactions</p>
+        </div>
+        <div class="project reveal" data-delay="0.10" style="min-width:160px;flex:1 1 180px">
+          <h3>Visual Design</h3>
+          <p style="color:var(--muted);font-size:13px">Layout, typography, color systems</p>
+        </div>
+        <div class="project reveal" data-delay="0.12" style="min-width:160px;flex:1 1 180px">
+          <h3>Prototyping</h3>
+          <p style="color:var(--muted);font-size:13px">Figma, interactive prototypes</p>
+        </div>
+        <div class="project reveal" data-delay="0.14" style="min-width:160px;flex:1 1 180px">
+          <h3>Accessibility</h3>
+          <p style="color:var(--muted);font-size:13px">WCAG, semantic HTML, ARIA</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="certifications" class="projects" aria-labelledby="certs-heading" style="padding:28px 6%;">
+      <h2 id="certs-heading" style="color:var(--accent);font-size:20px">Certifications</h2>
+      <div class="projects-grid"
+        style="margin-top:14px;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px">
+        <div class="project reveal" data-delay="0.06">
+          <h3>Certified UX Professional</h3>
+          <p style="color:var(--muted);font-size:13px">Interaction Design Foundation — 2024</p>
+        </div>
+        <div class="project reveal" data-delay="0.08">
+          <h3>Google UX Design</h3>
+          <p style="color:var(--muted);font-size:13px">Google / Coursera — 2023</p>
+        </div>
+        <div class="project reveal" data-delay="0.10">
+          <h3>Accessibility Specialist</h3>
+          <p style="color:var(--muted);font-size:13px">Deque University — 2022</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact" aria-labelledby="contact-heading">
+      <div>
+        <h2 id="contact-heading" style="color:var(--accent);font-size:20px">Let's work together</h2>
+        <p style="color:var(--muted);margin-top:8px">Available for freelance and contract work. Send a message and I'll
+          get back within 48 hours.</p>
+        <div style="margin-top:14px;color:var(--muted)"><strong>Email:</strong> <a href="mailto:mahmood@example.com"
+            style="color:#fff;text-decoration:none">mahmood@example.com</a></div>
+      </div>
+
+      <form class="reveal" data-delay="0.12" aria-label="Contact form" novalidate>
+        <label for="name" style="display:none">Name</label>
+        <input id="name" name="name" placeholder="Your name" required />
+        <label for="email" style="display:none">Email</label>
+        <input id="email" name="email" type="email" placeholder="Your email" required />
+        <label for="message" style="display:none">Message</label>
+        <textarea id="message" name="message" placeholder="Tell me about your project" required></textarea>
+        <button type="submit" class="btn">Send Message</button>
+      </form>
+
+      <aside class="reveal" data-delay="0.16" aria-hidden="false">
+        <h3 style="margin-bottom:8px">Quick Info</h3>
+        <p style="color:var(--muted);font-size:14px">Location: Remote (based in IST) • Available: ASAP • Languages:
+          English, Hindi</p>
+      </aside>
+    </section>
+  </main>
+
+  <footer>
+    © 2026 Mahmood Fazile. Built with care.
+  </footer>
+
+  <script>
+    // Simple mobile nav toggle
+    const navToggle = document.getElementById('navToggle');
+    const siteNav = document.getElementById('site-nav');
+    navToggle?.addEventListener('click', () => {
+      const expanded = navToggle.getAttribute('aria-expanded') === 'true';
+      navToggle.setAttribute('aria-expanded', String(!expanded));
+      siteNav.classList.toggle('show');
+    });
+
+    // Minimal form submit prevention (placeholder)
+    document.querySelector('form[aria-label="Contact form"]')?.addEventListener('submit', (e) => {
+      e.preventDefault();
+      alert('Thanks — this demo does not send messages. Replace with your backend endpoint.');
+    });
+
+    // Scroll reveal using IntersectionObserver
+    (function () {
+      const revealEls = document.querySelectorAll('.reveal');
+      if (!revealEls.length || !('IntersectionObserver' in window)) {
+        // fallback: show all
+        revealEls.forEach(el => el.classList.add('active'));
+        return;
+      }
+      const io = new IntersectionObserver((entries, obs) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const el = entry.target;
+            const d = parseFloat(el.dataset.delay || 0) * 1000;
+            setTimeout(() => el.classList.add('active'), Number.isFinite(d) ? d : 0);
+            obs.unobserve(el);
+          }
+        });
+      }, { threshold: 0.12 });
+      revealEls.forEach(el => io.observe(el));
+    })();
+
+    // Simple hero image tilt (subtle)
+    (function () {
+      const hero = document.querySelector('.hero-img');
+      if (!hero) return;
+      const img = hero.querySelector('img');
+      let rect = null;
+      function onMove(e) {
+        rect = rect || hero.getBoundingClientRect();
+        const x = (e.clientX - (rect.left + rect.width / 2)) / rect.width;
+        const y = (e.clientY - (rect.top + rect.height / 2)) / rect.height;
+        img.style.transform = `rotateX(${(-y * 4).toFixed(2)}deg) rotateY(${(x * 6).toFixed(2)}deg) translateZ(6px)`;
+      }
+      function onLeave() { img.style.transform = ''; }
+      hero.addEventListener('mousemove', onMove);
+      hero.addEventListener('mouseleave', onLeave);
+    })();
+  </script>
+</body>
+
+</html>
